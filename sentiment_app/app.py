@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import re
 import string
-import emoji
+#import emoji
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -39,7 +39,7 @@ def clean_text(text):
     text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation
     text = re.sub(r'\W', ' ', text)  # Remove special characters
     text = BeautifulSoup(text, "html.parser").get_text()  # Remove HTML tags
-    text = emoji.demojize(text)
+    #text = emoji.demojize(text)
     text = re.sub(r'@\w+', '', text)  # Remove mentions
     text = re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)  # Remove URLs
     text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
