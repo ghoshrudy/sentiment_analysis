@@ -5,7 +5,6 @@ import numpy as np
 import re
 import string
 import emoji
-#from pycontractions import Contractions
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -44,9 +43,6 @@ def clean_text(text):
     text = re.sub(r'@\w+', '', text)  # Remove mentions
     text = re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)  # Remove URLs
     text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
-    #contractions = Contractions()
-    #contractions.load_models()
-    #text = contractions.expand_texts([text])[0]  # Expand contractions
     return text
 
 # Load the model
